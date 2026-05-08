@@ -10,7 +10,10 @@
 // 1. IMPLEMENTATION
 
 def power(x: Double, n: Int): Double = {
-    // Ton code ici
+    if(n == 1)
+      x
+    else
+      x * power(x, n-1)
 }
 
 // 2. TESTS

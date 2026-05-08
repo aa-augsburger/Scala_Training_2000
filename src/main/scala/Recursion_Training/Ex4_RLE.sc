@@ -8,7 +8,7 @@
 // 1. IMPLEMENTATION
 
 def encodeRLE(chars: List[Char]): List[(Char, Int)] = {
-    // Ton code ici
+
 }
 
 // 2. TESTS

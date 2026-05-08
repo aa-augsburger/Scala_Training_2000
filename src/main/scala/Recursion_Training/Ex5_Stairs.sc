@@ -7,7 +7,11 @@
 // 1. IMPLEMENTATION
 
 def countWays(n: Int): Int = {
-    // Ton code ici
+    if(n < 2)
+      1
+    else{
+      countWays(n-1) + countWays(n-2)
+    }
 }
 
 // 2. TESTS

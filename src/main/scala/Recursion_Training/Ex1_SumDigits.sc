@@ -7,7 +7,12 @@
 // 1. IMPLEMENTATION
 
 def sumDigits(n: Int): Int = {
-    // Ton code ici
+    if(n < 10) {
+      n
+    }
+    else {
+      n%10 + sumDigits(n/10)
+    }
 }
 
 // 2. TESTS

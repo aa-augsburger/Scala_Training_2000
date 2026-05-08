@@ -7,7 +7,13 @@
 // 1. IMPLEMENTATION
 
 def reverse(s: String): String = {
-    // Ton code ici
+    if(s.length == 1) {
+      s
+    }
+    else {
+      s.substring(s.length-1,s.length) + reverse(s.substring(0, s.length-1))
+    }
+
 }
 
 // 2. TESTS
