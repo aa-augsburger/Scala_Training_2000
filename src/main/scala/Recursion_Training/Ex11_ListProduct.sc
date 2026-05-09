@@ -7,7 +7,7 @@
 // 1. IMPLEMENTATION
 
 def product(l: List[Int]): Int = {
-    // Ton code ici
+    if()
 }
 
 // 2. TESTS

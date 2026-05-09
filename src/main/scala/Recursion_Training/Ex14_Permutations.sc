@@ -1,3 +1,5 @@
+import scala.collection.mutable.ListBuffer
+
 /*
  * Titre : Permutations d'une chaîne (Difficile)
  * Énoncé : Génère toutes les permutations possibles des caractères d'une chaîne.
@@ -8,7 +10,20 @@
 // 1. IMPLEMENTATION
 
 def permutations(s: String): List[String] = {
-    // Ton code ici
+  val result = new ListBuffer[String]()
+    if (s.length == 1)
+      List(s)
+    else {
+      for(i <- 0 until s.length) {
+        val reste = s.substring(0,i) + s.substring(i+ 1)
+        val permDuReste = permutations(reste)
+        for(p <- permDuReste) {
+          result += (s(i) + p)
+        }
+      }
+      result.toList
+    }
+
 }
 
 // 2. TESTS

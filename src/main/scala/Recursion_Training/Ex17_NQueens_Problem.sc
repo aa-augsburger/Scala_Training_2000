@@ -23,7 +23,7 @@ def solveNQueens(n: Int): List[List[Int]] = {
    */
   def isSafe(board: List[Int], row: Int, col: Int): Boolean = {
     // TODO: Implémenter la vérification de sécurité (ligne, colonne, diagonales)
-    ???
+
   }
 
   /**
@@ -35,7 +35,20 @@ def solveNQueens(n: Int): List[List[Int]] = {
     // TODO: Implémenter la logique de backtracking
     // 1. Cas de base : toutes les reines sont placées
     // 2. Cas récursif : essayer chaque colonne de la ligne actuelle
-    ???
+    if(estSolution(etat)) {
+      afficheer(etat)
+      return true
+    }
+    for(choix <- choixPossible(etat)) {
+      if estValide(etait, choix)) {
+        appliquer(etat, choix)
+
+        if(solve(etat)) return true
+
+        annuler(etat, choix)
+      }
+    }
+    return false
   }
 
   backtrack(List(), 0)

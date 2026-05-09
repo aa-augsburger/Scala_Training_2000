@@ -7,7 +7,7 @@
 // 1. IMPLEMENTATION
 
 def merge(l1: List[Int], l2: List[Int]): List[Int] = {
-    // Ton code ici
+
 }
 
 // 2. TESTS

@@ -7,7 +7,11 @@
 // 1. IMPLEMENTATION
 
 def gcd(a: Int, b: Int): Int = {
-    // Ton code ici
+    if(b == 0) {
+      a
+    } else {
+      gcd(b, a%b)
+    }
 }
 
 // 2. TESTS

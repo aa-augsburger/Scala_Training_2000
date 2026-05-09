@@ -10,10 +10,20 @@
 
 // 1. IMPLEMENTATION
 
-def hanoi(n: Int, from: String, to: String, aux: String): Unit = {
+def hanoi(n: Int, from: String, aux: String, to: String): Unit = {
     // Ton code ici (utilise println pour chaque mouvement, ex: println(s"Move $from to $to"))
+
+    //cas de base, il y a 1 disque on le déplace directe
+    if(n == 1) {
+      println(s"$from -> $to")
+    }
+    else {
+      hanoi(n-1, from, to, aux)
+      println(s"$from -> $to")
+      hanoi(n-1, aux, from, to)
+    }
 }
 
 // 2. TESTS
 println("=== TEST: Tours de Hanoï (n=3) ===")
-hanoi(3, "A", "C", "B")
+hanoi(3, "A", "B", "C")

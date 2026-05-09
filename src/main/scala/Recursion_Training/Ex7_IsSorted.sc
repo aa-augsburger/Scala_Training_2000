@@ -7,7 +7,14 @@
 // 1. IMPLEMENTATION
 
 def isSorted(l: List[Int]): Boolean = {
-    // Ton code ici
+    if(l.isEmpty || l.tail.isEmpty)
+      true
+    else if(l.head > l.tail.head)
+      false
+    else
+          isSorted(l.tail)
+
+
 }
 
 // 2. TESTS
