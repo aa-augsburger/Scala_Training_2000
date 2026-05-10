@@ -18,7 +18,6 @@ object SudokuSolverSkeleton {
             return true
           else
             grid(v._1)(v._2) = 0 // on annule si le choix n'est pas le bon
-
         }
       }
         false
