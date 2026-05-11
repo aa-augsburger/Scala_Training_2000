@@ -49,18 +49,18 @@ object MagicSquareSolver {
 
   def solve(grid: Array[Array[Int]]): Boolean = {
     findEmpty(grid) match {
-      case None => isMagic(grid) //si c'est la fin on vérifie si c'est vraiment vide
-
+      case None => {
+        if (isMagic(grid)) return true
+        else return false
+      }
       case Some(v) => {
         for(i <- 1 to MaxNum) {
-              if(isValid(grid, v._1, v._2, i)) {
-                grid(v._1)(v._2) = i
-                if(solve(grid))
-                  return true
-                else
-                  grid(v._1)(v._2) = 0
-              }
-            }
+          if(isValid(grid, v._1, v._2, i)) {
+            grid(v._1)(v._2) = i
+            if(solve(grid)) return true
+            else grid(v._1)(v._2) = 0
+          }
+        }
         false
       }
     }

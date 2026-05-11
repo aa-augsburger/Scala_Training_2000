@@ -1,6 +1,6 @@
 object MazeSolver {
 
-  val N = 5
+  val N = 8
 
   // Directions : Haut, Bas, Gauche, Droite
   val dRow = Array(-1, 1, 0, 0)
@@ -12,27 +12,8 @@ object MazeSolver {
   }
 
   def solve(grid: Array[Array[Int]], r: Int, c: Int, endR: Int, endC: Int): Boolean = {
-    // TODO: Cas de base, Marquage, Exploration et Backtrack
-    if(!isSafe(grid, r, c))
-      return false
-
-    if(r == endR && c == endC)
-      return true
-    else {
-     if(isSafe(grid, r, c)) {
-       grid(r)(c) = 2
-       if(solve(grid, r-1,c, endR, endC) ||
-        solve(grid, r+1,c, endR, endC) ||
-        solve(grid, r,c-1, endR, endC) ||
-        solve(grid, r,c+1, endR, endC)) {
-         return true
-       }
-      grid(r)(c) = 0
-     }
-      false
-     }
-    }
-
+    ???
+  }
 
   def main(args: Array[String]): Unit = {
     val maze = Array(

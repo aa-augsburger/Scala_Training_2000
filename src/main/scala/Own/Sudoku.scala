@@ -7,26 +7,24 @@ object SudokuSolverSkeleton {
    * Modifie la grille sur place et renvoie true si une solution est trouvée.
    */
   def solve(grid: Array[Array[Int]]): Boolean = {
-    // TODO: Implémenter la logique de récursion ici
-    val nextCase = findEmpty(grid)
-    nextCase match {
+    findEmpty(grid) match {
+      case None => {
+        return true
+      }
       case Some(v) => {
-      for (i <- 1 to 9) {
-        if(isValid(grid,v._1, v._2, i)) {
-          grid(v._1)(v._2) = i
-          if(solve(grid))
-            return true
-          else
-            grid(v._1)(v._2) = 0 // on annule si le choix n'est pas le bon
+        for(i <- 1 to 9) {
+          if(isValid(grid, v._1, v._2, i)) {
+            grid(v._1)(v._2) = i
+            if(solve(grid)) return true
+            else {
+              grid(v._1)(v._2) = 0
+            }
+          }
         }
       }
-        false
+      false
     }
-      case None => true
-    }
-    }
-
-
+  }
   /**
    * Vérifie si un chiffre peut être placé à la position donnée selon les règles.
    */

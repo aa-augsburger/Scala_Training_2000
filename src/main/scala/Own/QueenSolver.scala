@@ -1,6 +1,6 @@
 object QueensSolver {
 
-  val N = 5 // Tu peux tester avec 4 pour commencer
+  val N = 9 // Tu peux tester avec 4 pour commencer
 
   /**
    * Vérifie si on peut poser une reine en (row, col) sans qu'elle soit attaquée.
@@ -28,24 +28,22 @@ object QueensSolver {
    * col : l'indice de la colonne sur laquelle on travaille actuellement.
    */
   def solve(grid: Array[Array[Int]], col: Int): Boolean = {
-    if(col == N) {
-      return true
-    }
-    else {
-      for(row <- 0 until N) {
-        if(isValid(grid, row, col)) {
-          grid(row)(col) = 1
-          if(solve(grid, col+1))
-           return true
-          else {
-            grid(row)(col) = 0
-          }
+  if(col == N) return true
+  else {
+    for(i <- 0 until N) {
+      if(isValid(grid, i, col)) {
+        grid(i)(col) = 1
+        if(solve(grid, col+1)) return true
+        else {
+          grid(i)(col) = 0
         }
       }
     }
     false
   }
 
+
+  }
 /*
     // CAS DE BASE :
     // Si l'indice de la colonne est égal à N, ça veut dire qu'on a placé
